@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container mt-4">
+
+    <h1 class="text-center">Your Analized text:</h1>
+    <br>
+    <div class="form-group mb-4">
+        <textarea name="text" placeholder="Enter Your Text Hear..." class="form-control"
+        style="min-height: 20vh;">{{analized_text}}</textarea>
+    </div>
+    <a href="/" class="btn btn-success">Go Home</a>
+    
+</div>
+{% endblock body %}

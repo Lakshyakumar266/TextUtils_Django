@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container my-4">
+    <h1 class="text-center mb-4">TextUtils - You Text Analizer</h1>
+    <form action="/analize" method="POST">
+        <div class="form-group mb-4"> {% csrf_token %}
+            <!-- Need in Form In Django --> {% csrf_token %} -->
+            <textarea name="text" placeholder="Enter Your Text Hear..." class="form-control"
+                style="min-height: 20vh;"></textarea>
+        </div>
+        <div class="form-check mb-4">
+            <input class="form-check-input" type="checkbox" name="removepunc" id="removepunc">
+            <label class="form-check-label" for="removepunc">Remove punctuations</label>
+        </div>
+        <div class="form-check mb-4">
+            <input class="form-check-input" type="checkbox" name="fullchap" id="fullchap">
+            <label class="form-check-label" for="fullchap">Full Chapatelise</label>
+        </div>
+        <div class="form-check mb-4">
+            <input class="form-check-input" type="checkbox" name="newlineremove" id="newlineremove">
+            <label class="form-check-label" for="newlineremove">New Line Remove</label>
+        </div>
+        <div class="form-check mb-4">
+            <input class="form-check-input" type="checkbox" name="extraspaceremove" id="extraspaceremove">
+            <label class="form-check-label" for="extraspaceremove">Remove Extra Space</label>
+        </div>
+        <div class="form-check mb-4">
+            <input class="form-check-input" type="checkbox" name="charcount" id="charcount">
+            <label class="form-check-label" for="charcount">Character Counter</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Analize Text</button>
+    </form>
+</div>
+
+{% endblock body %}
